@@ -1,10 +1,15 @@
 import telegram
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import requests
+import os
+from dotenv import load_dotenv
 
-# Токены
-TELEGRAM_TOKEN = '7796872269:AAHA9FafaSO5Q-8NMnjrccMQAEmzBjTkiIE'
-REPLICATE_API_TOKEN = 'ВАШ_REPLICATE_ТОКЕН'
+# Загружаем переменные из .env
+load_dotenv()
+
+# Теперь можешь получать значения так:
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+REPLICATE_API_TOKEN = os.getenv("REPLICATE_API_TOKEN")
 
 bot = telegram.Bot(token=TELEGRAM_TOKEN)
 
